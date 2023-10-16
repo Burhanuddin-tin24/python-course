@@ -1,4 +1,14 @@
 
+#WRITNG FUNCTION:
+# f = open("my.txt", "w")
+# print(f.write("I have no enemies!"))
+# f.close()
+
+# f = open("my.txt", "r" )
+# for line in f:
+#    print(f.readline())
+
+
 # #LAMBDA FUNCTIONS:
 # y = int(input("enter your number"))
 # sum = lambda y: y * 2
@@ -84,11 +94,35 @@ b= per("itachi", 16)
 a.data()
 b.data()
 
-#WRITNG FUNCTION:
-# f = open("my.txt", "w")
-# print(f.write("I have no enemies!"))
-# f.close()
 
-f = open("my.txt", "r" )
-for line in f:
-   print(f.readline())
+#DECORATORS:
+def decorate(func):
+  def modified():
+    print("here is your answer")
+    func()
+    print("thanks, for using me")
+  return modified
+@decorate
+def calculate():
+  a = int(input("enter number: "))
+  b = int(input("enter number: "))
+  print(a+b)
+
+calculate()
+
+#INHERITANCE:
+class student:
+  def __init__(self,name, lastname):
+    self._name= name
+    self._lastname= lastname
+  def show(self):
+    print(f"Incapsulation of student name {self._name} {self._lastname}")
+
+class teacher(student):
+  def showoft(self):
+    print("levi is added in teacher class with incalsulation")
+
+s1 = teacher("levi", "ackerman")
+s1.show()
+s1.showoft()
+#n
