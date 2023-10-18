@@ -125,4 +125,23 @@ class teacher(student):
 s1 = teacher("levi", "ackerman")
 s1.show()
 s1.showoft()
-#n
+
+#CLASS METODS:
+class person:
+ def __init__(cls, name , age):
+  cls.name = name
+  cls.age = age
+   
+ @classmethod
+ def clsmethod(cls, string):
+   return cls(string.split("-")[0], string.split("-")[1])
+    
+string = "levi-3000"
+p1 = person.clsmethod(string)
+print(p1.name)
+print(p1.age)
+
+print(dir(p1))#Shows the methods that can be used on that variable
+print(p1.__setattr__)#Mehtod given by  dir
+print(p1.__dict__)#give the all info about self keyword in class, in dictionary form
+print(help(p1))#Give all the possible information of given variable, like what is happening in the class
