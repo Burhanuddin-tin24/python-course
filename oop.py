@@ -163,49 +163,24 @@
 # print(len(e1))
 
 
-from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+#METHOD OVERRIDING:
+class sphere:
+  def __init__(self, x ):
+    self.x =x
+    
+  def vol(self): 
+    return (4/3)*3.14*(self.x**3)
 
-# Sample blog post data
-posts = [
-    {
-        'id': 1,
-        'title': 'Introduction to Flask',
-        'content': 'Flask is a micro web framework for Python.',
-    },
-    {
-        'id': 2,
-        'title': 'Getting Started with Flask',
-        'content': 'Learn the basics of creating web applications with Flask.',
-    },
-]
+class cone(sphere):
+  def __init__(self,x):
+    self.x=x
+  def volc(self):
+    return(3.14*(self.x**2)*(self.x/3)) + super().vol()#this is where we have do method overriding
+    
+sp= sphere(5)
+print("the volume of sphere is" , sp.vol())
+co=cone(5)
+print("the volume of cone is ", co.volc())
 
-@app.route('/')
-def home():
-    return render_template('home.html', posts=posts)
-
-@app.route('/post/<int:post_id>')
-def post(post_id):
-    post = next((p for p in posts if p['id'] == post_id), None)
-    if post:
-        return render_template('post.html', post=post)
-    return 'Post not found', 404
-
-@app.route('/new_post', methods=['GET', 'POST'])
-def new_post():
-    if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-        new_post = {
-            'id': len(posts) + 1,
-            'title': title,
-            'content': content,
-        }
-        posts.append(new_post)
-        return redirect(url_for('home'))
-
-    return render_template('new_post.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+print(5+5)
