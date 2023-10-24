@@ -164,23 +164,34 @@
 
 
 
-#METHOD OVERRIDING:
-class sphere:
-  def __init__(self, x ):
-    self.x =x
+# #METHOD OVERRIDING:
+# class sphere:
+#   def __init__(self, x ):
+#     self.x =x
     
-  def vol(self): 
-    return (4/3)*3.14*(self.x**3)
+#   def vol(self): 
+#     return (4/3)*3.14*(self.x**3)
 
-class cone(sphere):
-  def __init__(self,x):
-    self.x=x
-  def volc(self):
-    return(3.14*(self.x**2)*(self.x/3)) + super().vol()#this is where we have do method overriding
+# class cone(sphere):
+#   def __init__(self,x):
+#     self.x=x
+#   def volc(self):
+#     return(3.14*(self.x**2)*(self.x/3)) + super().vol()#this is where we have do method overriding
     
-sp= sphere(5)
-print("the volume of sphere is" , sp.vol())
-co=cone(5)
-print("the volume of cone is ", co.volc())
+# sp= sphere(5)
+# print("the volume of sphere is" , sp.vol())
+# co=cone(5)
+# print("the volume of cone is ", co.volc())
 
-print(5+5)
+# print(5+5)
+import os
+a= [ a for a in  os.listdir() if a.endswith(".pdf")]
+from PyPDF2 import PdfWriter
+
+merger = PdfWriter()
+
+for pdf in a:
+    merger.append(pdf)
+
+merger.write("merged-pdf.pdf")
+merger.close()
