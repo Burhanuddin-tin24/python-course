@@ -183,15 +183,76 @@
 # co=cone(5)
 # print("the volume of cone is ", co.volc())
 
-# print(5+5)
-import os
-a= [ a for a in  os.listdir() if a.endswith(".pdf")]
-from PyPDF2 import PdfWriter
+# # print(5+5)
+# import os
+# a= [ a for a in  os.listdir() if a.endswith(".pdf")]
+# from PyPDF2 import PdfWriter
 
-merger = PdfWriter()
+# merger = PdfWriter()
 
-for pdf in a:
-    merger.append(pdf)
+# for pdf in a:
+#     merger.append(pdf)
 
-merger.write("merged-pdf.pdf")
-merger.close()
+# merger.write("merged-pdf.pdf")
+# merger.close()
+
+# #SINGLE AND MULTILEVEL INHERITANCE:
+
+# class animal():
+#   def __init__(self, name):
+#     self.name = name
+#   def speak(self):
+#     print("bhau")
+    
+# class cat(animal):
+#   def __init__(self,name):
+#     pass
+#     # animal.__init__(self,name)
+#   def speak(self):
+#     return "miauu"
+
+# class cheetah(cat):
+#   def __init__(self,breed):
+#     self.b=breed
+#   def br(self):
+#     return f"the breed of the cheetah is {self.b}"
+  
+
+# an = cat("dog")
+# print(an.speak())
+# ca= cat("cat")
+# print(ca.speak())
+# ch = cheetah( "persian")
+# print(ch.br())
+
+#TIME MODULE:
+# import time
+# def forl():
+#     for i in range(5):
+#         print(i)
+# forl()
+# print(time.time())
+# print("this is instant")
+# time.sleep(5)
+# print("this is after delay of 5 secs")
+
+# t  = time.localtime()
+# formated = time.strftime("%Y-%m-%D %H:%M:%S", t)
+# print(f" current time:  {formated}")
+  
+#WALRUS OPERATIOR ":=" :
+# a = True
+# print(a)
+# print(a:= False)
+# food = list()
+# while (foods:= input("what food do you like to eat??: ")) != "quit":
+#     food.append(foods)
+# print(f"here is your list- {food}")
+food1= list()
+while True:
+  food= input("what food do you like??: ")
+  if food == "quit":
+    break
+  food1.append(food)
+print(food1)
+
