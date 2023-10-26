@@ -280,12 +280,24 @@
 # engine.runAndWait()
 
 #REQUESTS MODULE:
-import requests as rq
-from bs4 import BeautifulSoup 
+# import requests as rq
+# from bs4 import BeautifulSoup 
 
-re = rq.get("https://www.mentalhelp.net/internet/adult-content/")
-# print(re.text)
-soup = BeautifulSoup(re.text, "html.parser")
-# print(soup.prettify)
-for div in soup.find_all("script"):
-    print(div.text)
+# re = rq.get("https://www.mentalhelp.net/internet/adult-content/")
+# # print(re.text)
+# soup = BeautifulSoup(re.text, "html.parser")
+# # print(soup.prettify)
+# for div in soup.find_all("script"):
+#     print(div.text)
+
+#CALENDAR MODULE:
+# from calendar import *
+# year = int(input("enter the year: "))
+# print(calendar(year))
+
+import pyttsx3 as py
+voice = py.init()
+text= "hello!"
+voice.setProperty("rate",100)
+voice.say(text)
+voice.runAndWait()
