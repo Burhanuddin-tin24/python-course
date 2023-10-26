@@ -243,16 +243,49 @@
 #WALRUS OPERATIOR ":=" :
 # a = True
 # print(a)
+
+#WITH WALRUS...
 # print(a:= False)
 # food = list()
 # while (foods:= input("what food do you like to eat??: ")) != "quit":
 #     food.append(foods)
 # print(f"here is your list- {food}")
-food1= list()
-while True:
-  food= input("what food do you like??: ")
-  if food == "quit":
-    break
-  food1.append(food)
-print(food1)
 
+#WITHOUT WALRUS...
+# food1= list()
+# while True:
+#   food= input("what food do you like??: ")
+#   if food == "quit":
+#     break
+#   food1.append(food)
+# print(food1)
+
+#SHUTIL MODULE:
+# import shutil
+# import os
+# shutil.copy2("sh.txt", "main2.py")
+# shutil.move("merger/sh.txt", "read.md")
+#os.mkdir("shutiltest")
+
+#TEXT TO SPEECH:
+# import pyttsx3  
+# # initialize Text-to-speech engine  
+# engine = pyttsx3.init()  
+# # convert this text to speech  
+# text = "chutiye" 
+# engine.setProperty("rate", 10)  
+# engine.say(text) 
+  
+# # play the speech  
+# engine.runAndWait()
+
+#REQUESTS MODULE:
+import requests as rq
+from bs4 import BeautifulSoup 
+
+re = rq.get("https://www.mentalhelp.net/internet/adult-content/")
+# print(re.text)
+soup = BeautifulSoup(re.text, "html.parser")
+# print(soup.prettify)
+for div in soup.find_all("script"):
+    print(div.text)
