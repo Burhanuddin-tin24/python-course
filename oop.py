@@ -295,9 +295,109 @@
 # year = int(input("enter the year: "))
 # print(calendar(year))
 
-import pyttsx3 as py
-voice = py.init()
-text= "hello!"
-voice.setProperty("rate",100)
-voice.say(text)
-voice.runAndWait()
+# #GENERATORS: this function dont store values in memory, it just print the value at the time of proccessing..
+# def gene():
+#     for i in range(11):
+#         yield i
+# gen = gene() 
+# print(next(gen)) #print 0
+# print(next(gen)) #print 1
+# print(next(gen)) #print 2
+# print(next(gen)) and so on.. 
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+
+# #FUNCTION CACHING:
+# from functools import lru_cache
+# import time
+# @lru_cache(maxsize= 2)
+# def add(x):
+#     time.sleep(3)
+#     return x+5
+
+# print(add(5),"done for x=5")#this will take 3 sec to run
+# print(add(10),"done for x=10")#this will take 3 sec to run
+# print(add(10),"done for x=10")#this will instantly run cause the value is stored 
+# print(add(5),"done for x=5")#this will instantly run cause the value is stored 
+
+# ASYNCIO:
+# import requests
+# key = "799edfba41c841b3933c06a467c2e80e"
+# import asyncio
+# async def func1():
+#     source = f"https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey={key}"
+#     news = requests.get(source).json()
+#     headline = news["articles"]
+#     # print(headline)
+#     loop = []
+#     for info in headline:
+#      loop.append(info["title"])
+#     for i in range(0):
+#         print(loop[i])
+    
+# async def func2():
+#     source = f"https://newsapi.org/v2/everything?q=bitcoin&apiKey={key}"
+#     news = requests.get(source).json()
+#     headline = news["articles"]
+#     # print(headline)
+#     loop = []
+#     for info in headline:
+#      loop.append(info["title"])
+#     for i in range(0):
+#         print(loop[i])
+
+
+
+# async def main():
+#     info = await asyncio.gather(
+#     func1(),
+#     func2(),
+#    
+#     )
+#     print(info)
+# asyncio.run(main())
+
+# #MULTI THREADING:
+# import threading
+# import time
+# from concurrent.futures import ThreadPoolExecutor
+# import requests as req
+# def func1(seconds):
+#     print(f"print done is {seconds} seconds")
+# def main():
+#     ti= time.perf_counter()
+#     t1= threading.Thread(target = func1, args=[3])
+#     t2= threading.Thread(target = func1, args=[2])
+#     t3= threading.Thread(target = func1, args=[1])
+#     t1.start()
+#     t2.start()
+#     t3.start()
+
+#     t1.join()
+#     t2.join()
+#     t3.join()
+#     ti1= time.perf_counter()
+#     print(ti1-ti)
+
+# def pooling():
+#     with ThreadPoolExecutor() as executor:
+#         l = [1,2,3,4]
+#         results = executor.map(func1, l)
+#         for result in results:
+#             print(result)
+# pooling() 
+
+#MULTIPROCESSING:
+
+l = [1,2,3,4,5]
+def sq(nums):
+    for num in nums:
+        print(num*num)
+sq(l)
