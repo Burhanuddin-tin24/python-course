@@ -71,7 +71,7 @@
 
 # #POP NOTIFIER:
 # from win10toast import ToastNotifier
-# toast= ToastNotifier
+# toast= ToastNotifier()
 # import time
 # for i in range():
 #     time.sleep(5)
