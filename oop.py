@@ -439,8 +439,10 @@
 # mat= re.findall(pat, tx)
 # print(mat)
 
-#FILE HANDLILNG:
-with open("handling.txt", "r+") as f :
-    # user = input("enter your name: ")
-    # f.write(user)
-    print(f.readlines())
+# #FILE HANDLILNG:
+# with open("handling.txt", "r+") as f :
+#     user = input("enter your name: ")
+#     f.write(user)
+#     print(f.readlines())
+
+
